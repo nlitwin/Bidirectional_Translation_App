@@ -5,6 +5,9 @@
 ## Build Setup
 
 ``` bash
+# switch to the node version defined in .nvmrc
+nvm use
+
 # install dependencies
 npm install
 
