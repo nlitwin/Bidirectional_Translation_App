@@ -22,6 +22,7 @@
     data: () => ({
       isRunning: false,
       startTime: 0,
+      timeElapsed: 0,
       formattedTime: null,
       interval: null,
     }),
@@ -56,9 +57,8 @@
         this.reset()
         this.isRunning = true
         this.startTime = Date.now()
-        this.interval = setInterval(this.formatTime, 1000)
+        this.interval = setInterval(this.updateTime, 1000)
       },
-      reset() {
       resume() {
         this.isRunning = true
         this.startTime = Date.now() - this.timeElapsed
@@ -77,20 +77,22 @@
         clearInterval(this.interval)
         this.interval = null
       },
-      formatTime() {
+      updateTime() {
         if (!this.isRunning) {
-          this.formattedTime = this.parseMilliseconds(0)
-
+          this.formatTime()
           return
         }
 
-        const timeElapsed = Date.now() - this.startTime
-        this.formattedTime = this.parseMilliseconds(timeElapsed)
+        this.timeElapsed = Date.now() - this.startTime
+        this.formatTime(this.timeElapsed)
       },
-      parseMilliseconds(numMilliseconds) {
-        let seconds = parseInt((numMilliseconds / 1000) % 60)
-        let minutes = parseInt((numMilliseconds / (1000 * 60)) % 60)
-        let hours = parseInt(numMilliseconds / (1000 * 60 * 60))
+      formatTime(time = 0) {
+        this.formattedTime = this.parseTimeInMilliseconds(time)
+      },
+      parseTimeInMilliseconds(time = 0) {
+        let seconds = Math.floor((time / 1000) % 60)
+        let minutes = Math.floor((time / (1000 * 60)) % 60)
+        let hours = Math.floor(time / (1000 * 60 * 60))
 
         seconds = seconds < 10 ? `0${seconds}` : seconds
         minutes = minutes < 10 ? `0${minutes}` : minutes
