@@ -33,6 +33,8 @@
     },
     computed: {
       toggleButtonText() {
+        if (this.isRunning) return 'Pause'
+        if (this.timeElapsed) return 'Resume'
         return 'Start'
       },
     },
