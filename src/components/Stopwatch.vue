@@ -96,9 +96,10 @@
 
         seconds = seconds < 10 ? `0${seconds}` : seconds
         minutes = minutes < 10 ? `0${minutes}` : minutes
-        hours = hours < 10 ? `0${hours}` : hours
+        const parsedTime = `${minutes}:${seconds}`
 
-        return `${hours}:${minutes}:${seconds}`
+        if (hours === 0) return parsedTime
+        return `${hours}:${parsedTime}`
       },
     }
   }
