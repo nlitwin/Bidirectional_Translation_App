@@ -40,9 +40,17 @@
     },
     methods: {
       toggle() {
-        if (!this.startTime) {
-          this.start()
+        if (this.isRunning) {
+          this.pause()
+          return
         }
+
+        if (this.timeElapsed) {
+          this.resume()
+          return
+        }
+
+        this.start()
       },
       start() {
         this.reset()
