@@ -1,40 +1,23 @@
-<template>
-  <v-app>
-    <v-toolbar color="blue darken-3" dark app fixed>
-      <v-toolbar-title :style="$vuetify.breakpoint.smAndUp ? 'width: 300px; min-width: 250px' : 'min-width: 72px'" class="ml-0 pl-3">
-        <span class="hidden-xs-only">Bidirectional Translation</span>
-      </v-toolbar-title>
+<template lang="pug">
+  v-app
+    v-toolbar(color='blue darken-3', dark, app, fixed)
+      v-toolbar-title.ml-0.pl-3(:style="$vuetify.breakpoint.smAndUp ? 'width: 300px; min-width: 250px' : 'min-width: 72px'")
+        span.hidden-xs-only Bidirectional Translation
 
-      <div class="d-flex align-center" style="margin-left: auto">
-        <v-btn icon>
-          <v-icon>apps</v-icon>
-        </v-btn>
+      .d-flex.align-center(style='margin-left: auto')
+        v-btn(icon)
+          v-icon apps
 
-        <v-btn icon>
-          <v-icon>notifications</v-icon>
-        </v-btn>
-      </div>
-    </v-toolbar>
+        v-btn(icon)
+          v-icon notifications
 
-    <v-content>
-      <v-container fluid fill-height>
-        <v-layout justify-center align-center>
-          <router-view></router-view>
-        </v-layout>
-      </v-container>
-    </v-content>
+    v-content
+      v-container(fluid, fill-height)
+        v-layout(justify-center, align-center)
+          router-view
 
-    <v-btn
-      fab
-      bottom right
-      color="pink" dark
-      fixed
-      @click.stop="dialog = !dialog"
-    >
-      <v-icon>add</v-icon>
-    </v-btn>
-
-  </v-app>
+    v-btn(fab, bottom, right, color='pink', dark, fixed, @click.stop='dialog = !dialog')
+      v-icon add
 </template>
 
 <script>
@@ -48,6 +31,6 @@
   }
 </script>
 
-<style>
+<style lang="stylus">
 
 </style>
