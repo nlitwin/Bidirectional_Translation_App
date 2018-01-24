@@ -59,6 +59,11 @@
         this.interval = setInterval(this.formatTime, 1000)
       },
       reset() {
+      resume() {
+        this.isRunning = true
+        this.startTime = Date.now() - this.timeElapsed
+        this.interval = setInterval(this.updateTime, 1000)
+      },
         this.isRunning = false
         this.startTime = 0
         this.formatTime()
