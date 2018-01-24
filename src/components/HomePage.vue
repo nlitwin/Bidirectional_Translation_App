@@ -1,15 +1,15 @@
 <template lang="pug">
   .home-page-wrapper
-    bt-stopwatch
+    bt-task
 </template>
 
 <script>
-  import BtStopwatch from '@/components/Stopwatch'
+  import BtTask from '@/components/Task'
 
   export default {
     name: 'HomePage',
     components: {
-      BtStopwatch,
+      BtTask,
     },
   }
 </script>
