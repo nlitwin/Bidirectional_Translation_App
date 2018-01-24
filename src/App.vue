@@ -34,25 +34,6 @@
       <v-icon>add</v-icon>
     </v-btn>
 
-    <v-dialog v-model="dialog" width="800px">
-      <v-card>
-        <v-card-title class="grey lighten-4 py-4 title">
-          Listening and Reading
-        </v-card-title>
-
-        <v-container grid-list-sm class="pa-4">
-          <v-layout row wrap>
-            <v-flex xs12>
-              <v-text-field box multi-line :label="labelText"></v-text-field>
-            </v-flex>
-          </v-layout>
-        </v-container>
-
-        <v-card-actions>
-          <v-btn style="margin-left: auto" flat @click="dialog = false">Save</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
   </v-app>
 </template>
 
