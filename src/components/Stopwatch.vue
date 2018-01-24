@@ -11,7 +11,7 @@
         ) {{ toggleButtonText }}
 
         v-btn(
-          @click="reset"
+          @click="reset(false)"
           color="secondary"
         ) Reset
 </template>
@@ -64,10 +64,18 @@
         this.startTime = Date.now() - this.timeElapsed
         this.interval = setInterval(this.updateTime, 1000)
       },
+      pause() {
+        this.reset(true)
+      },
+      reset(saveElapsedTime) {
         this.isRunning = false
         this.startTime = 0
-        this.formatTime()
+        if (!saveElapsedTime) {
+          this.timeElapsed = 0
+        }
+        this.formatTime(this.timeElapsed)
         clearInterval(this.interval)
+        this.interval = null
       },
       formatTime() {
         if (!this.isRunning) {
