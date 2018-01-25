@@ -87,6 +87,7 @@
         this.formatTime(this.timeElapsed)
       },
       formatTime(time = 0) {
+        this.$emit('time', time)
         this.formattedTime = this.parseTimeInMilliseconds(time)
       },
       parseTimeInMilliseconds(time = 0) {
