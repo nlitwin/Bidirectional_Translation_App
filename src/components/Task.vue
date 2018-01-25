@@ -13,7 +13,7 @@
               :rules="[rules.number]",
             )
 
-            bt-stopwatch
+            bt-stopwatch(v-on:time="trackTime")
 
       v-card-actions
         v-btn(
@@ -34,6 +34,7 @@
     data: () => ({
       // TODO what options are there for default prop values?
       numTimesListened: 0,
+      timeSpentOnTask: 0,
       rules: {
         number: (value) => {
           const pattern = /^\d+$/
@@ -46,6 +47,9 @@
         // TODO: pass model to stopwatch to get time data?
         alert(this.numTimesListened)
       },
+      trackTime(time) {
+        this.timeSpentOnTask = time
+      }
     },
   }
 </script>
