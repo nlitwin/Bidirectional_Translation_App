@@ -17,9 +17,9 @@
 
       v-card-actions
         v-btn(
-          style='margin-left: auto'
-          flat
-          @click='saveTaskData'
+          style="margin-left: auto",
+          flat,
+          @click="saveTaskData",
         ) Save
 </template>
 
