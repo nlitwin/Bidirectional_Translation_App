@@ -7,10 +7,9 @@
         v-layout(row wrap)
           v-flex(xs12)
             v-text-field(
-              label="# of times listened to audio"
-              v-model="numTimesListened"
-              type="number"
-              mask="##"
+              type="number",
+              label="# of times listened to audio",
+              v-model.number="numTimesListened",
             )
 
             bt-stopwatch
@@ -33,7 +32,7 @@
     },
     data: () => ({
       // TODO what options are there for default prop values?
-      numTimesListened: null,
+      numTimesListened: 0,
     }),
     methods: {
       saveTaskData() {
