@@ -10,6 +10,7 @@
               type="number",
               label="# of times listened to audio",
               v-model.number="numTimesListened",
+              :rules="[rules.number]",
             )
 
             bt-stopwatch
@@ -33,6 +34,12 @@
     data: () => ({
       // TODO what options are there for default prop values?
       numTimesListened: 0,
+      rules: {
+        number: (value) => {
+          const pattern = /^\d+$/
+          return pattern.test(value) || 'Enter a whole number'
+        },
+      },
     }),
     methods: {
       saveTaskData() {
