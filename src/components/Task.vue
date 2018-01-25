@@ -1,7 +1,7 @@
 <template lang="pug">
   .task-wrapper
     v-card
-      v-card-title.grey.lighten-4.py-4.title Listening and Reading
+      v-card-title.grey.lighten-4.py-3.title Listening and Reading
 
       v-container.pa-4(grid-list-sm)
         v-layout(row wrap)
