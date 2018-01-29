@@ -56,10 +56,7 @@
       },
     }),
     methods: {
-      saveTaskData() {
-        // TODO: pass model to stopwatch to get time data?
-        alert(this.numTimesListened)
-      },
+      saveTaskData() {},
       trackTime(time) {
         this.timeSpentOnTask = time
       }
