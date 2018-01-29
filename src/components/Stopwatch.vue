@@ -6,7 +6,7 @@
 
       v-flex(xs12)
         v-btn(
-          @click.stop="toggle"
+          @click="toggle"
           color="primary"
         ) {{ toggleButtonText }}
 
@@ -54,7 +54,10 @@
         this.start()
       },
       start() {
+        // Start from a clean slate
         this.reset()
+
+        // Initialize and kick off the timer
         this.isRunning = true
         this.startTime = Date.now()
         this.interval = setInterval(this.updateTime, 1000)
