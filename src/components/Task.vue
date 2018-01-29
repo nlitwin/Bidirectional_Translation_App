@@ -1,7 +1,7 @@
 <template lang="pug">
   .task-wrapper
     v-card
-      v-card-title.grey.lighten-4.py-3.title Listening and Reading
+      v-card-title.grey.lighten-4.py-3.title {{ cardTitle }}
 
       v-container.pa-4(grid-list-sm)
         v-layout(row wrap)
@@ -30,6 +30,12 @@
     name: 'bt-task',
     components: {
       BtStopwatch,
+    },
+    props: {
+      cardTitle: {
+        type: String,
+        required: true,
+      },
     },
     data: () => ({
       // TODO what options are there for default prop values?
