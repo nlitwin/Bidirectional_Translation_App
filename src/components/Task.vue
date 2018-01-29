@@ -15,6 +15,12 @@
 
             bt-stopwatch(v-on:time="trackTime")
 
+            v-text-field(
+              multi-line
+              label="Notes"
+              v-model="taskNotes"
+            )
+
       v-card-actions
         v-btn(
           style="margin-left: auto",
@@ -41,6 +47,7 @@
       // TODO what options are there for default prop values?
       numTimesListened: 0,
       timeSpentOnTask: 0,
+      taskNotes: '',
       rules: {
         number: (value) => {
           const pattern = /^\d+$/
