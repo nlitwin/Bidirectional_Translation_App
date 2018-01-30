@@ -27,6 +27,9 @@
   }
 </script>
 
-<style>
-
+<style lang="stylus" scoped>
+  .home-page-wrapper
+    display grid
+    grid-template-columns 300px 300px
+    grid-gap: 20px
 </style>
