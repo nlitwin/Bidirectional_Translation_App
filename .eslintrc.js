@@ -26,5 +26,6 @@ module.exports = {
     // allow comma dangle
     'comma-dangle': 0,
     'space-before-function-paren': ['error', 'never'],
+    'no-trailing-spaces': 0,
   }
 }
