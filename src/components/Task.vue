@@ -56,7 +56,15 @@
       },
     }),
     methods: {
-      saveTaskData() {},
+      saveTaskData() {
+        const payload = {
+          numTimesListened: this.numTimesListened,
+          timeSpentOnTask: this.timeSpentOnTask,
+          taskNotes: this.taskNotes,
+        }
+
+        console.table(payload)
+      },
       trackTime(time) {
         this.timeSpentOnTask = time
       }
