@@ -1,7 +1,7 @@
 <template lang="pug">
   .task-wrapper
     v-card
-      v-card-title.grey.lighten-4.py-3.title {{ cardTitle }}
+      v-card-title.grey.lighten-4.py-3.title {{ taskTitle }}
 
       .task-card-content
         v-text-field(
@@ -15,9 +15,18 @@
 
         v-text-field(
           multi-line
+          label="Exercises"
+          v-model="readingAloudExercises"
+          v-if="type === 'RA'"
+        )
+
+        v-text-field(
+          multi-line
           label="Notes"
           v-model="taskNotes"
         )
+
+        
 
       v-card-actions
         v-btn(
@@ -30,22 +39,31 @@
 <script>
   import BtStopwatch from '@/components/Stopwatch'
 
+  const taskToTitle = {
+    LR: 'Listening and Reading',
+    PA: 'Phonetic Analysis',
+    RA: 'Reading Aloud',
+    L2L1: 'Translation: L2 to L1',
+    OT: 'Oral Translation',
+    L1L2: 'Translation: L1 to L2',
+  }
+
   export default {
     name: 'bt-task',
     components: {
       BtStopwatch,
     },
     props: {
-      cardTitle: {
+      type: {
         type: String,
         required: true,
       },
     },
     data: () => ({
-      // TODO what options are there for default prop values?
       numTimesListened: 0,
       timeSpentOnTask: 0,
       taskNotes: '',
+      readingAloudExercises: '',
       rules: {
         number: (value) => {
           const pattern = /^\d+$/
@@ -53,6 +71,11 @@
         },
       },
     }),
+    computed: {
+      taskTitle() {
+        return taskToTitle[this.type]
+      }
+    },
     methods: {
       saveTaskData() {
         const payload = {
