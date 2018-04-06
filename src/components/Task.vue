@@ -35,6 +35,14 @@
           v-if="type !== 'L2L1' && type !== 'L1L2'"
         )
 
+        v-text-field(
+          type="number",
+          label="% correct",
+          v-model.number="percentageCorrect",
+          :rules="[rules.number]",
+          v-if="type === 'L1L2'"
+        )
+
       v-card-actions
         v-btn(
           style="margin-left: auto",
@@ -69,6 +77,7 @@
     data: () => ({
       numTimesListened: 0,
       timeSpentOnTask: 0,
+      percentageCorrect: 0,
       taskNotes: '',
       readingAloudExercises: '',
       l1Translation: '',
