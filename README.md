@@ -1,5 +1,5 @@
 ![CircleCI branch](https://img.shields.io/circleci/project/github/nlitwin/bidirectional-translation-app/master.svg)
-[![Coverage Status](https://coveralls.io/repos/github/nlitwin/bidirectional-translation-app/badge.svg?branch=master)](https://coveralls.io/github/nlitwin/bidirectional-translation-app?branch=master?style=for-the-badge)
+[![Coverage Status](https://coveralls.io/repos/github/nlitwin/bidirectional-translation-app/badge.svg?branch=master)](https://coveralls.io/github/nlitwin/bidirectional-translation-app?branch=master)
 
 # Bidirectional Translation App
 
