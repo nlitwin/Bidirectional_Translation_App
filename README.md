@@ -2,6 +2,10 @@
 
 > An app providing all your needs for the bidirectional translation method!
 
+
+![CircleCI branch](https://img.shields.io/circleci/project/github/nlitwin/bidirectional-translation-app/master.svg)
+
+
 ## Build Setup
 
 ``` bash
