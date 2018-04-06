@@ -9,6 +9,7 @@
           label="# of times listened to audio",
           v-model.number="numTimesListened",
           :rules="[rules.number]",
+          v-if="showListensCounter"
         )
 
         bt-stopwatch(v-on:time="trackTime")
@@ -19,14 +20,20 @@
           v-model="readingAloudExercises"
           v-if="type === 'RA'"
         )
+        
+        v-text-field(
+          multi-line
+          :label="type === 'L2L1' ? 'L1 Translation' : 'L2 Translation'"
+          v-model="l1Translation"
+          v-if="type === 'L2L1' || type === 'L1L2'"
+        )
 
         v-text-field(
           multi-line
           label="Notes"
           v-model="taskNotes"
+          v-if="type !== 'L2L1' && type !== 'L1L2'"
         )
-
-        
 
       v-card-actions
         v-btn(
@@ -64,6 +71,7 @@
       timeSpentOnTask: 0,
       taskNotes: '',
       readingAloudExercises: '',
+      l1Translation: '',
       rules: {
         number: (value) => {
           const pattern = /^\d+$/
@@ -74,6 +82,9 @@
     computed: {
       taskTitle() {
         return taskToTitle[this.type]
+      },
+      showListensCounter() {
+        return ['LR', 'PA', 'RA'].includes(this.type)
       }
     },
     methods: {
