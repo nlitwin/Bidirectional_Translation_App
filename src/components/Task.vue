@@ -71,5 +71,9 @@
 </script>
 
 <style lang="stylus" scoped>
-
+  .task-card-content
+    display flex
+    flex-direction column
+    align-items center
+    width 80%
 </style>
