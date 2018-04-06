@@ -3,23 +3,21 @@
     v-card
       v-card-title.grey.lighten-4.py-3.title {{ cardTitle }}
 
-      v-container.pa-4(grid-list-sm)
-        v-layout(row wrap)
-          v-flex(xs12)
-            v-text-field(
-              type="number",
-              label="# of times listened to audio",
-              v-model.number="numTimesListened",
-              :rules="[rules.number]",
-            )
+      .task-card-content
+        v-text-field(
+          type="number",
+          label="# of times listened to audio",
+          v-model.number="numTimesListened",
+          :rules="[rules.number]",
+        )
 
-            bt-stopwatch(v-on:time="trackTime")
+        bt-stopwatch(v-on:time="trackTime")
 
-            v-text-field(
-              multi-line
-              label="Notes"
-              v-model="taskNotes"
-            )
+        v-text-field(
+          multi-line
+          label="Notes"
+          v-model="taskNotes"
+        )
 
       v-card-actions
         v-btn(
