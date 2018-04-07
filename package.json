@@ -98,8 +98,8 @@
     ]
   },
   "engines": {
-    "node": ">= 4.0.0",
-    "npm": ">= 3.0.0"
+    "node": ">= 8.11.1",
+    "npm": ">= 5.8.0"
   },
   "browserslist": [
     "last 1 versions",
