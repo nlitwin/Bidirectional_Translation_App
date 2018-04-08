@@ -1,7 +1,7 @@
 describe('HomePage', () => {
   it('loads successfully', () => {
     // TODO save to constant
-    cy.visit('localhost:8085')
+    cy.visit('/')
   })
 
   it('renders tasks', () => {
