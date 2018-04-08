@@ -50,6 +50,7 @@
           style="margin-left: auto",
           flat,
           @click="saveTaskData",
+          data-cy="task__save-btn"
         ) Save
 </template>
 
