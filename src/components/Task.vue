@@ -10,6 +10,7 @@
           v-model.number="numTimesListened",
           :rules="[rules.number]",
           v-if="showListensCounter"
+          data-cy="task__times-listened-input"
         )
 
         bt-stopwatch(v-on:time="trackTime")
@@ -20,7 +21,7 @@
           v-model="readingAloudExercises"
           v-if="type === 'RA'"
         )
-        
+
         v-text-field(
           multi-line
           :label="type === 'L2L1' ? 'L1 Translation' : 'L2 Translation'"
@@ -33,6 +34,7 @@
           label="Notes"
           v-model="taskNotes"
           v-if="type !== 'L2L1' && type !== 'L1L2'"
+          data-cy="task__notes"
         )
 
         v-text-field(
@@ -48,6 +50,7 @@
           style="margin-left: auto",
           flat,
           @click="saveTaskData",
+          data-cy="task__save-btn"
         ) Save
 </template>
 

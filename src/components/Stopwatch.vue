@@ -1,13 +1,15 @@
 <template lang="pug">
+  //- TODO: delete vuetify layout
   v-container.stopwatch-wrapper(text-xs-center)
     v-layout(column)
       v-flex.current-time(xs12 headline)
-        p {{ formattedTime }}
+        p(data-cy="stopwatch__current-time") {{ formattedTime }}
 
       v-flex(xs12)
         v-btn(
           @click="toggle"
           color="primary"
+          data-cy="stopwatch__toggle-btn"
         ) {{ toggleButtonText }}
 
         v-btn(
