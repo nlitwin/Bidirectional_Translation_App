@@ -1,10 +1,9 @@
-describe('HomePage', () => {
-  it('loads successfully', () => {
-    // TODO save to constant
+describe('HomePage', function() {
+  it('loads successfully', function() {
     cy.visit('/')
   })
 
-  it('renders tasks', () => {
+  it('renders tasks', function() {
     cy.get('.task-wrapper')
       .should('have.length', 6)
   })
