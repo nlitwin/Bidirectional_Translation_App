@@ -45,6 +45,10 @@ jobs:
           background: true
 
       - run:
+          name: Waiting for server to start...
+          command: wait-on http://localhost:8085
+
+      - run:
           name: Run E2E tests
           command: npm run test:e2e
 
