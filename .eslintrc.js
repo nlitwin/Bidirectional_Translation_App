@@ -2,21 +2,25 @@
 
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   parserOptions: {
-    sourceType: 'module'
+    parser: "babel-eslint",
   },
   env: {
     browser: true,
+    node: true,
+    es6: true
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-  extends: 'standard',
+  extends: [
+    "eslint:recommended",
+    "plugin:vue/recommended"
+  ],
   // required to lint *.vue files
   plugins: [
-    'html'
+    "vue"
   ],
   // add your custom rules here
-  'rules': {
+  rules: {
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await
