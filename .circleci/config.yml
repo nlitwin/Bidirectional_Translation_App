@@ -46,7 +46,7 @@ jobs:
 
       - run:
           name: Waiting for server to start...
-          command: wait-on http://localhost:8085
+          command: ./node_modules/.bin/wait-on http://localhost:8085
 
       - run:
           name: Run E2E tests
