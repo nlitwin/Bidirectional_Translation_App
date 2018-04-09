@@ -9,7 +9,7 @@ jobs:
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
-      - image: circleci/node:8.11.1
+      # - image: circleci/node:8.11.1
       - image: cypress/base:6
         environment:
           TERM: xterm
@@ -34,20 +34,19 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run:
-          name: Run unit tests
-          command: npm run test:unit
+      # - run:
+      #     name: Run unit tests
+      #     command: npm run test:unit
 
-      - run:
-          name: Start the server
-          command: npm start
-          background: true
-          sleep: 30
+      # - run:
+      #     name: Start the server
+      #     command: npm start
+      #     background: true
+      #     sleep: 30
 
-      - run:
-          name: Waiting for server to start...
-          command: ./node_modules/.bin/wait-on http://localhost:8085
+      # - run:
+      #     name: Waiting for server to start...
+      #     command: ./node_modules/.bin/wait-on http://localhost:8085
 
       - run:
           name: Run E2E tests
