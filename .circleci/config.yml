@@ -38,15 +38,15 @@ jobs:
       #     name: Run unit tests
       #     command: npm run test:unit
 
-      # - run:
-      #     name: Start the server
-      #     command: npm start
-      #     background: true
-      #     sleep: 30
+      - run:
+          name: Start the server
+          command: npm start
+          background: true
+          sleep: 30
 
-      # - run:
-      #     name: Waiting for server to start...
-      #     command: ./node_modules/.bin/wait-on http://localhost:8085
+      - run:
+          name: Waiting for server to start...
+          command: ./node_modules/.bin/wait-on http://localhost:8085
 
       - run:
           name: Run E2E tests
