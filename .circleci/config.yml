@@ -43,6 +43,7 @@ jobs:
           name: Start the server
           command: npm start
           background: true
+          sleep: 30
 
       - run:
           name: Waiting for server to start...
