@@ -107,8 +107,11 @@
           taskNotes: this.taskNotes,
         }
 
+        const taskData = JSON.stringify(payload)
         // eslint-disable-next-line
-        console.table(payload)
+        console.table(taskData)
+        debugger
+        localStorage.setItem("taskData", taskData)
       },
       trackTime(time) {
         this.timeSpentOnTask = time
