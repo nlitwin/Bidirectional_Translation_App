@@ -100,8 +100,8 @@
     ]
   },
   "engines": {
-    "node": ">= 8.11.1",
-    "npm": ">= 5.6.0"
+    "node": ">= 6.11.1",
+    "npm": ">= 3.10.10"
   },
   "browserslist": [
     "last 1 versions",
