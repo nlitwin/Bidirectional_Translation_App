@@ -6,13 +6,13 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      - image: circleci/node:8.11.1
-
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
+      - image: circleci/node:8.11.1
+      - image: cypress/base:6
+        environment:
+          TERM: xterm
 
     working_directory: ~/repo
 
@@ -34,6 +34,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: npm test
+      - run: npm run test:unit
+      - run: npm start && npm run test:e2e
 
 
