@@ -20,7 +20,7 @@
 
 <script>
   export default {
-    name: 'bt-stopwatch',
+    name: 'BtStopwatch',
     data: () => ({
       isRunning: false,
       startTime: 0,
@@ -28,18 +28,18 @@
       formattedTime: null,
       interval: null,
     }),
-    mounted() {
-      this.formatTime()
-    },
-    destroyed() {
-      clearInterval(this.interval)
-    },
     computed: {
       toggleButtonText() {
         if (this.isRunning) return 'Pause'
         if (this.timeElapsed) return 'Resume'
         return 'Start'
       },
+    },
+    mounted() {
+      this.formatTime()
+    },
+    destroyed() {
+      clearInterval(this.interval)
     },
     methods: {
       toggle() {
