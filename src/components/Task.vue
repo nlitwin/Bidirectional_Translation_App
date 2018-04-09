@@ -67,7 +67,7 @@
   }
 
   export default {
-    name: 'bt-task',
+    name: 'BtTask',
     components: {
       BtStopwatch,
     },
@@ -107,6 +107,7 @@
           taskNotes: this.taskNotes,
         }
 
+        // eslint-disable-next-line
         console.table(payload)
       },
       trackTime(time) {
