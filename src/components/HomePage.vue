@@ -12,12 +12,12 @@
 
   export default {
     name: 'HomePage',
-    data: () => ({
-      taskTypes: ['LR', 'PA', 'RA', 'L2L1', 'OT', 'L1L2'],
-    }),
     components: {
       BtTask,
     },
+    data: () => ({
+      taskTypes: ['LR', 'PA', 'RA', 'L2L1', 'OT', 'L1L2'],
+    }),
   }
 </script>
 
