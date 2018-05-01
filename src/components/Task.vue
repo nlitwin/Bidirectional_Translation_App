@@ -99,12 +99,6 @@
         return ['LR', 'PA', 'RA'].includes(this.type)
       }
     },
-    mounted() {
-      // TODO: use object to hold task data to avoid looping
-      const taskData = JSON.parse(localStorage.getItem("taskData"))
-      Object.keys(taskData).forEach(key => {
-        this[key] = taskData[key]
-      })
     },
     methods: {
       saveTaskData() {
