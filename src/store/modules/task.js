@@ -1,3 +1,5 @@
+import tasksApi from '@/api/tasks'
+
 const state = {
   tasks: {
     LR: {},
@@ -7,18 +9,25 @@ const state = {
     OT: {},
     L1L2: {},
   },
+  taskTypes: [],
 }
 
 const getters = {
-  taskTypes: state => Object.keys(state.tasks),
+  taskTypes: state => state.taskTypes,
 }
 
 const actions = {
-
+  getTasks({ commit }) {
+    tasksApi.getTasks(taskTypes => {
+      commit('setTaskTypes', taskTypes)
+    })
+  }
 }
 
 const mutations = {
-
+  setTaskTypes(state, taskTypes) {
+    state.taskTypes = taskTypes
+  },
 }
 
 export default {

@@ -20,7 +20,10 @@
       ...mapGetters({
         taskTypes: 'taskTypes',
       })
-    }
+    },
+    created() {
+      this.$store.dispatch('getTasks')
+    },
   }
 </script>
 
