@@ -8,6 +8,7 @@
 </template>
 
 <script>
+  import { mapGetters } from "vuex";
   import BtTask from '@/components/Task'
 
   export default {
@@ -15,9 +16,11 @@
     components: {
       BtTask,
     },
-    data: () => ({
-      taskTypes: ['LR', 'PA', 'RA', 'L2L1', 'OT', 'L1L2'],
-    }),
+    computed: {
+      ...mapGetters({
+        taskTypes: 'taskTypes',
+      })
+    }
   }
 </script>
 
