@@ -99,8 +99,20 @@
         return ['LR', 'PA', 'RA'].includes(this.type)
       }
     },
+    created() {
+      this.getTaskData()
     },
     methods: {
+      getTaskData() {
+        const tasks = JSON.parse(localStorage.getItem("tasks"))
+        if (!tasks) return
+
+        const task = tasks[this.type];
+
+        task && Object.keys(task).forEach((key) => {
+          this[key] = task[key]
+        })
+      },
       saveTaskData() {
         const payload = {
           numTimesListened: this.numTimesListened,
@@ -108,11 +120,13 @@
           taskNotes: this.taskNotes,
         }
 
-        const taskData = JSON.stringify(payload)
         // eslint-disable-next-line
-        console.table(taskData)
-        debugger
-        localStorage.setItem("taskData", taskData)
+        console.table(payload)
+
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || {}
+
+        tasks[this.type] = payload
+        localStorage.setItem("tasks", JSON.stringify(tasks))
       },
       trackTime(time) {
         this.timeSpentOnTask = time
