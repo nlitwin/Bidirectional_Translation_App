@@ -5,8 +5,7 @@
         span.hidden-xs-only Bidirectional Translation
 
       .d-flex.align-center(style='margin-left: auto')
-        v-btn(icon)
-          v-icon apps
+        router-link.about-link(to="/about") About
 
         v-btn(icon)
           v-icon notifications
@@ -32,5 +31,6 @@
 </script>
 
 <style lang="stylus">
-
+.about-link
+  color white
 </style>
